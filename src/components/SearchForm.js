@@ -1,6 +1,6 @@
 import React from 'react';
 
-function SearchForm() {
+function SearchForm(props) {
     return (
         <div>
             <form>
@@ -10,10 +10,13 @@ function SearchForm() {
                         id="searchBar"
                         type="text"
                         className="form-control"
+                        onChange={props.filter}
                     />
                 </div>
                 <div className="mb-3">
-                    <button type="submit" className="btn btn-primary">Search</button>
+                    <button className="btn btn-success" onClick={props.sortByName}>Sort By Name</button>
+                    {" "}
+                    <button className="btn btn-success" onClick={props.sortById}>Sort By Id</button>
                 </div>
             </form>
         </div>
